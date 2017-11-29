@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+  before_action :current_user
 
   private
 
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
     params[:session][:remember_me] == Settings.sessions.default_check ? remember(@user) : forget(@user)
     remember @user
     if @user.admin?
-      redirect_to users_path
+      redirect_to admins_root_url
     else
       redirect_to root_url
     end

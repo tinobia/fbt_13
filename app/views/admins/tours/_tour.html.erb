@@ -9,7 +9,7 @@
     <%= tour.price %>
   </td>
   <td class="center">
-    <%= link_to t(".edit"), edit_admins_tour_path(tour) %>
-    | <%= link_to t(".delete"), tour, method: :delete, data: { confirm: t(".confirm") } %>
+    <%= link_to t(".edit"), edit_admins_tour_path(id: tour.id) %>
+    | <%= link_to t(".delete"), tour_destroy_path(id: tour.id), method: :delete, data: { confirm: t(".confirm") } %>
   </td>
 </tr>

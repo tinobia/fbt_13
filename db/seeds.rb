@@ -14,6 +14,8 @@ User.create!(name_user: "Example User",
              gender: false,
              address: "Vinh Trung Plaza")
 
+CategoryTour.create!(name_category: "Du lich nuoc ngoai")
+
 50.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@tino.com"

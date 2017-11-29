@@ -12,12 +12,21 @@
             <i class="fa fa-user"></i><i class="fa fa-angle-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-user">
-            <li><i class="fa fa-user user-dropdown"><%= link_to t(".user"), "#" %></i>
+            <li>
+              <i class="fa fa-user user-dropdown">
+                <%= link_to t(".user"), user_path(@current_user) %>
+              </i>
             </li>
-            <li><i class="fa fa-cog user-dropdown"><%= link_to t(".settings"), "#" %>  </i>
+            <li>
+              <i class="fa fa-cog user-dropdown">
+                <%= link_to t(".settings"), "#" %>
+              </i>
             </li>
             <li class="divider"></li>
-            <li><i class="fa fa-sign-out user-dropdown"><%= link_to t(".logout"), "#" %></i>
+            <li>
+              <i class="fa fa-sign-out user-dropdown">
+                <%= link_to t(".logout"), logout_path %>
+              </i>
             </li>
           </ul>
         </li>

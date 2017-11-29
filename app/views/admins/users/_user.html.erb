@@ -9,6 +9,6 @@
     <%= user.gender %>
   </td>
   <td class="center">
-    <%= link_to t(".delete"), user, method: :delete, data: { confirm: t(".confirm") } %>
+    <%= link_to t(".delete"), user_destroy_path(id: user.id), method: :delete, data: { confirm: t(".confirm") } %>
   </td>
 </tr>
