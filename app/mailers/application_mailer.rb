@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Settings.nvtrung_mail
+  default from: Settings.mail.from
   layout "mailer"
 end
