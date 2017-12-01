@@ -15,3 +15,14 @@ home:
   url: http://localhost:3000/
 booking:
   url: https://www.booking.com/
+nvtrung_mail:
+  nguyenvantrungnct@gmail.com
+users:
+  name_user:
+    max_length: 50
+  password:
+    min_length: 6
+  gravartar:
+    size: 80
+sessions:
+  default_check: 1

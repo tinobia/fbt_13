@@ -1,0 +1,25 @@
+<% provide :title, t(".login") %>
+<div id = "login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-5">
+        <div class="form-login">
+          <%= form_for :session, url: login_path do |f| %>
+            <h4 class = "title"><%= t(".welcome") %></h4>
+            <%= f.text_field :name_user, class: "form-control input-sm chat-input", placeholder: t(".username") %>
+            </br>
+            <%= f.password_field :password, class: "form-control input-sm chat-input", placeholder: t(".password") %>
+            </br>
+            <%= f.check_box :remember_me %>
+            <span><%= t".rememember_me" %></span>
+            <div class="wrapper">
+              <span class="group-btn">
+              <%= f.submit t(".login"), class: "btn btn-primary btn-md" %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
