@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def login_fail
-    flash.now[:danger] = t "controllers.sessions.create.invalidsignin"
+    flash.now[:danger] = t "controllers.sessions_controller.invalid-signin"
     render :new
   end
 
