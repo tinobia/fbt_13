@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belong_to :tour
-  belong_to :user
+  belongs_to :tour
+  belongs_to :user
 end

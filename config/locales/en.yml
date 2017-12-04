@@ -1,4 +1,46 @@
 en:
   hello: "Hello world"
+  static_pages:
+    home:
+      test: "Welcome to the Framgia Booking Tour"
+      home: "Home"
+      sentence_html: "This is the home page for the %{fbt_links} app"
+      fbt_href: "Framgia Booking Tour"
+      signup: "Sign up now!"
+  shared:
+    error_messages:
+      alert: The form contains %{errors}.
+  helpers:
+    application_helper:
+      title: "Framgia Booking Tour"
   layouts:
-    fbt: "Fbt13"
+    application:
+      fbt: "Framgia Booking Tour"
+    header:
+      home: "Home"
+      help: "Help"
+      login: "Log in"
+      title: "Book Your Travel"
+    footer:
+      about: "About Us"
+      contact: "Contact"
+      news: "News"
+      sentence: A product was designed by Trung & Nuong
+  controllers:
+    users_controller:
+      success: "Welcome to Ep Be Te"
+      updated: "Profile Updated"
+      login: "Please log in."
+      deleted: "User deleted"
+      failed_to_delete: "Failed to delete user"
+      not_found_user: "User was not be found"
+  users:
+    index:
+      title: Book Your Tour
+    user:
+      delete: "delete"
+      confirm: "You sure ?"
+    new:
+      signup: "Sign up"
+      confirm: "Confirmation"
+      button: "Create my account"
