@@ -176,3 +176,33 @@ h4 {
 .btn-md{
   font-size: 16px;
 }
+
+.setting{
+  width: 70px;
+  height: 30px;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  padding: 3px;
+}
+
+.setting:hover{
+  background: #CCCCCC;
+}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+.show{
+  margin-top: 20px;
+  text-align: left;
+}
+
+#login{
+  margin-top:50px;
+}

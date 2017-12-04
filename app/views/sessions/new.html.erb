@@ -6,7 +6,7 @@
         <div class="form-login">
           <%= form_for :session, url: login_path do |f| %>
             <h4 class = "title"><%= t(".welcome") %></h4>
-            <%= f.text_field :name_user, class: "form-control input-sm chat-input", placeholder: t(".username") %>
+            <%= f.email_field :email, class: "form-control input-sm chat-input", placeholder: t(".email") %>
             </br>
             <%= f.password_field :password, class: "form-control input-sm chat-input", placeholder: t(".password") %>
             </br>
