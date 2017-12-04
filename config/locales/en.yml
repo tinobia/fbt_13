@@ -44,3 +44,36 @@ en:
       signup: "Sign up"
       confirm: "Confirmation"
       button: "Create my account"
+  basic_title: "Welcome to visit our website"
+  layouts:
+    fbt: "Fbt13"
+    header:
+      signout: "Sign out"
+  sessions:
+    new:
+      login: "Login"
+      welcome: "Welcome back."
+      username: "Username"
+      password: "Password"
+      login: "Login"
+      forgetpassword: "Forgot password"
+      rememember_me: "Remember me on this computer"
+  users:
+    show:
+      profile: "Profile Page"
+  controllers:
+    sessions:
+      create:
+        invalidsignin: "Invalid username or password"
+        notactive: "Account not activated. Check your email for the activation link."
+        active: "Login successful"
+    users:
+      show:
+        notfound: "User not found"
+    account_activations:
+      edit:
+        success: "Account activated!"
+        danger: "Invalid activation link"
+  users_mailer:
+    account_activation:
+      subject: "Account activation"

@@ -3,6 +3,7 @@ User.create!(name_user: "Tino ne",
              tel: "01283755270",
              password: "tinobia112",
              password_confirmation: "tinobia112",
+             admin: true,
              gender: true,
              address: "Big C Da Nang")
 User.create!(name_user: "Example User",

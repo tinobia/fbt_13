@@ -11,16 +11,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
-    @user = User.new user_params
-    if @user.save
-      flash.now[:success] = t "controllers.users_controller.success"
-      redirect_to @user
-    else
-      render :new
-    end
-  end
-
   def destroy
     if @user.destroy
       flash[:success] = t "controllers.users_controller.deleted"
@@ -29,6 +19,8 @@ class UsersController < ApplicationController
     end
     redirect_to users_url
   end
+
+  def create; end
 
   private
 
