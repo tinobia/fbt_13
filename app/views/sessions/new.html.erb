@@ -10,11 +10,13 @@
             </br>
             <%= f.password_field :password, class: "form-control input-sm chat-input", placeholder: t(".password") %>
             </br>
-            <%= f.check_box :remember_me %>
-            <span><%= t".rememember_me" %></span>
-            <div class="wrapper">
+            <p class = "remmember">
+              <%= f.check_box :remember_me, class: "login-checkbox" %>
+              <span><%= t".rememember_me" %></span>
+            </p>
+            <div class="wrapper-submit">
               <span class="group-btn">
-              <%= f.submit t(".login"), class: "btn btn-primary btn-md" %>
+                <%= f.submit t(".login"), class: "btn btn-primary btn-md" %>
               </span>
             </div>
           <% end %>
