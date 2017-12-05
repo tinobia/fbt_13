@@ -1,13 +1,28 @@
 <% provide :title, @user.name_user %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1><%= gravatar_for @user %></h1>
-      <h2><%= @user.name_user %></h2>
-      <h2><%= @user.email %></h2>
-      <h3><%= @user.gender %></h3>
-      <%= @user.address %>
-    </section>
-  </aside>
+<div class="container show" >
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="well well-md">
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <%= gravatar_for @user %>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <h4><%= @user.name_user %></h4>
+            <small>
+              <cite><%= @user.address %><i class="glyphicon glyphicon-map-marker">
+              </i></cite>
+            </small>
+            <i class="glyphicon glyphicon-envelope"></i><%= @user.email %>
+            <br />
+            <i class="fa fa-phone"></i><%= @user.tel%>
+            <br />
+          </div>
+          <div class="col-sm-2 col-md-2">
+            <p class = "btb btn-success setting"><%= link_to t(".setting"), edit_user_path %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

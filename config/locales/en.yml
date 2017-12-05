@@ -19,6 +19,7 @@ en:
       login: "Log in"
       title: "Book Your Travel"
       signout: "Sign out"
+      setting: "Settings"
     footer:
       about: "About Us"
       contact: "Contact"
@@ -35,8 +36,10 @@ en:
       confirm: "Confirmation"
       button: "Create my account"
     edit:
-      update: "Update user"
+      update: "Update information"
       button: "Update"
+    show:
+      setting: "Settings"
   helpers:
     application_helper:
       basic_title: "Welcome to visit our website"
@@ -44,7 +47,7 @@ en:
     new:
       login: "Login"
       welcome: "Welcome back."
-      username: "Username"
+      email: "Email"
       password: "Password"
       login: "Login"
       forgetpassword: "Forgot password"
@@ -57,8 +60,11 @@ en:
       deleted: "User deleted"
       failed_to_delete: "Failed to delete user"
       not_found_user: "User was not be found"
+      success_update_user: "Update successful!!!"
+      fail_update_user: "Failed, update again :("
+      please_login: "Please log in."
     sessions_controller:
-      invalid-signin: "Invalid username or password"
+      invalid-signin: "Invalid email or password"
       notactive: "Account not activated. Check your email for the activation link."
       active: "Login successful"
     account_activations_controller:
