@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 @import 'variables';
 @import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -44,17 +45,29 @@ textarea {
 
 .logo {
   float: left;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: -5px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+.list-slidebar{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #337ab7;
+    background-color: transparent;
+}
+
+.nav-header {
+  margin-top: -40px;
 }
 
 footer {
@@ -88,7 +101,6 @@ footer {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -205,4 +217,24 @@ color: #999;
 
 #login{
   margin-top:50px;
+}
+
+.user-dropdown {
+  padding: 3px 20px;
+  min-height: 0;
+  display: block;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap
+}
+
+.form-add {
+  margin-left: 90px;
+  width: 70%
+}
+
+.second-level-icon {
+  margin-left: 20px;
 }
