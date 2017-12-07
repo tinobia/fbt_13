@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit)
 
   def index
-    @users = User.user_sort.paginate(page: params[:page])
+    @users = User.all
   end
 
   def show; end
@@ -25,23 +25,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.new user_params
+    if @user.save
+      flash.now[:success] = t "controllers.users_controller.success"
+      redirect_to @user
+    else
+      render :new
+    end
+  end
+
   def destroy
     if @user.destroy
       flash[:success] = t "controllers.users_controller.deleted"
     else
       flash[:danger] = t "controllers.users_controller.failed_to_delete"
     end
-    redirect_to users_url
+    redirect_to root_path
   end
-
-  def create; end
 
   private
-
-  def user_params
-    params.require(:user).permit :name_user, :email, :tel, :password,
-      :password_confirmation, :gender, :address
-  end
 
   def find_user
     @user = User.find_by id: params[:id]
@@ -50,10 +53,9 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def logged_in_user
-    return if logged_in?
-    flash[:danger] = t "controllers.users_controller.please_login"
-    redirect_to login_url
+  def user_params
+    params.require(:user).permit :name_user, :email, :tel, :password,
+      :password_confirmation, :gender, :address
   end
 
   def correct_user

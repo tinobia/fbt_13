@@ -1,0 +1,78 @@
+<header>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top nav-header" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+		 		<div class="logo">
+		   		<%= link_to image_tag("logo.png", alt: "Booking Your Travel"), "http://localhost:3000/" %>
+		 		</div>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-menu-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><i class="glyphicon glyphicon-user user-dropdown"><%= link_to t(".user"), users_path %></i>
+						</li>
+						<li><i class="glyphicon glyphicon-cog user-dropdown"><%= link_to t(".settings"), users_path %>	</i>
+						</li>
+						<li class="divider"></li>
+						<li><i class="glyphicon glyphicon-log-out user-dropdown"><%= link_to t(".logout"), users_path %></i>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="list-slidebar">
+								<i class="glyphicon glyphicon-user"></i>
+								<%= link_to t(".users"), users_path %>
+							</div>
+						</li>
+						<li>
+							<a href="#"><i class="glyphicon glyphicon-plane"></i> Tours<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<div class="list-slidebar">
+										<i class="fa fa-plus-circle second-level-icon"></i>
+										<%= link_to t(".add_tour"), addtour_path %>
+									</div>
+								</li>
+								<li>
+									<div class="list-slidebar">
+										<i class="fa fa-edit second-level-icon"></i>
+										<%= link_to t(".manage_tours"), tours_path %>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div class="list-slidebar">
+								<i class="glyphicon glyphicon-plane"></i>
+								<%= link_to t(".reviews"), "#" %>
+							</div>
+						</li>
+						<li>
+								<div class="list-slidebar">
+									<i class="glyphicon glyphicon-briefcase"></i>
+									<%= link_to t(".catergories_tour"), "#" %>
+								</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+  </div>
+</header>

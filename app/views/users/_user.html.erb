@@ -1,5 +1,14 @@
-<li>
-  <%= gravatar_for user, size: Settings.gravatar.size %>
-  <%= link_to user.name_user, user %>
-  | <%= link_to t(".delete"), user, method: :delete, data: { confirm: t(".confirm") } %>
-</li>
+<tr class="odd gradeX">
+  <td>
+    <%= gravatar_for user, size: Settings.gravatar.size %>
+    <%= link_to user.name_user, user %>
+  </td>
+  <td><%= user.tel %></td>
+  <td><%= user.address %></td>
+  <td class="center">
+    <%= user.gender %>
+  </td>
+  <td class="center">
+    <%= link_to t(".delete"), user, method: :delete, data: { confirm: t(".confirm") } %>
+  </td>
+</tr>

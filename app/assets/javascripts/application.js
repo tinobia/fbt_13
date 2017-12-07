@@ -14,10 +14,11 @@
 //= require bootstrap.min
 //= require moment
 //= require bootstrap-datetimepicker
+//= require datetimepicker
+//= require datatable.js
 //= require rails-ujs
 //= require dataTables.bootstrap.min
 //= require dataTables.responsive
 //= require metisMenu
 //= require sb-admin-2.min
-//= require turbolinks
 //= require dataTables/jquery.dataTables
