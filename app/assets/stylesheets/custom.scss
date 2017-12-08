@@ -2,7 +2,7 @@
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
 @import 'variables';
-@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400);
+@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400|Lobster);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 @mixin box_sizing {
@@ -14,6 +14,9 @@
 body {
   padding-top: 60px;
   font: normal 14px Roboto,arial,sans-serif;
+  img:hover{
+    opacity: 0.5;
+  }
 }
 
 section {
@@ -46,12 +49,14 @@ textarea {
 .logo {
   float: left;
   margin-left: 5px;
-  margin-top: -5px;
+  margin-top: 5px;
   font-size: 1.7em;
   color: white;
+  display: inline-block;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
+
   &:hover {
     color: white;
     text-decoration: none;
@@ -74,7 +79,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  color: $gray-medium-light;
   a {
     color: $gray;
     &:hover {
@@ -93,10 +98,6 @@ footer {
       margin-left: 15px;
     }
   }
-}
-
-.logo {
-  display: inline-block;
 }
 
 input, textarea, select, .uneditable-input {
@@ -171,6 +172,7 @@ h4 {
 .remmember {
   margin-top: -15px;
 }
+
 .login-checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -215,10 +217,6 @@ color: #999;
   text-align: left;
 }
 
-#login{
-  margin-top:50px;
-}
-
 .user-dropdown {
   padding: 3px 20px;
   min-height: 0;
@@ -241,4 +239,45 @@ color: #999;
 
 .icon-side-bar{
   padding-right: 20px;
+}
+
+.login_page {
+  text-transform: capitalize;
+  line-height: 150%;
+  margin: 10px;
+}
+
+header{
+  .container{
+    background: $gray-medium-light;
+  }
+  ul li{
+    list-style: none;
+  }
+  .icon-side-bar{
+    margin-right: 10px;
+  }
+  .dropdown-user{
+  background: $gray-medium-light;
+  }
+  .login{
+  margin-top: 15px;
+  font-family: "Lobster";
+  font-size: 25px;
+  }
+  .menu-main{
+  font-family: "Lobster";
+  font-size: 15px;
+  }
+}
+
+footer{
+  .social-icon:hover{
+  transform: scale(1.1);
+  }
+
+  .social-icon:hover{
+  transform: scale(0.8);
+  transition-duration: 0.5s;
+  }
 }
