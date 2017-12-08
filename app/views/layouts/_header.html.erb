@@ -1,15 +1,39 @@
+<% provide :button_text, t(".button") %>
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <nav>
-      <div class="logo">
+    <nav class="row">
+      <div class="logo col-md-4">
         <%= link_to image_tag("logo.png", alt: "Booking Your Travel"), "http://localhost:3000/" %>
       </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t(".home"), "#" %></li>
-        <li><%= link_to t(".help"), "#" %></li>
-        <li><%= link_to t(".login"), login_path %></li>
-        <li><%= link_to t(".signout"), logout_path %></li>
-      </ul>
+      <div class="col-md-7">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to t(".home"), "#" %></li>
+          <li><%= link_to t(".help"), "#" %></li>
+          <% if @current_user.present? %>
+            <li><h6><span><%=@current_user.name_user%></span></h6></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user icon-side-bar"></i><i class="fa fa-angle-down"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+                <li>
+                  <i class="fa fa-user user-dropdown icon-side-bar">
+                    <%= link_to t(".user"), user_path(@current_user)%>
+                  </i>
+                </li>
+                <li><i class="fa fa-cog user-dropdown icon-side-bar"><%= link_to t(".settings"), edit_user_path(@current_user) %></i>
+                </li>
+                <li class="divider"></li>
+                <li><i class="fa fa-sign-out user-dropdown icon-side-bar"><%= link_to t(".logout"), logout_path %></i>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to t(".login"), login_path %></li>
+          <% end %>
+          <li class="clearfix"></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
