@@ -10,6 +10,24 @@ en:
   shared:
     error_messages:
       alert: The form contains %{errors}.
+  helpers:
+    application_helper:
+      title: "Framgia Booking Tour"
+  admin:
+    admin_header:
+      users: "Users"
+      setting: "Settingss"
+      logout: "Logout"
+      add_tour: Add Tours
+      manage_tours: Manage Tours
+      reviews: reviews
+      categories_tour: Categories Tour
+      tours: Tours
+    admin_footer:
+      about: "About Us"
+      contact: "Contact"
+      news: "News"
+      sentence: A product was designed by Trung & Nuong
   layouts:
     application:
       fbt: "Framgia Booking Tour"
@@ -25,9 +43,31 @@ en:
       contact: "Contact"
       news: "News"
       sentence: A product was designed by Trung & Nuong
+  controllers:
+    users_controller:
+      success: "Welcome to Ep Be Te"
+      updated: "Profile Updated"
+      login: "Please log in."
+      deleted: "User deleted"
+      failed_to_delete: "Failed to delete user"
+      not_found_user: "User was not be found"
+      not_admin: Pls login in admin
+    tours_controller:
+      success: "Add a tour successfully"
+      failed_to_add: "Failed to add a new tour"
+      deleted: "Deleted successfully"
+      failed_to_delete: "Failed to delete Tour"
+      not_found_tour: "Tour wasnt found"
+      updated: Tour was updated
   users:
     index:
       title: Book Your Tour
+      header: Users
+      name_table: All users table
+      name_user: Name User
+      tel: Tel
+      add: Address
+      gen: Gender
     user:
       delete: "delete"
       confirm: "You sure ?"
@@ -63,6 +103,10 @@ en:
       success_update_user: "Update successful!!!"
       fail_update_user: "Failed, update again :("
       please_login: "Please log in."
+      not_correct_user: "Not correct user"
+      not_admin: Please login in Admin
+    application_controller:
+      please_login: Please login
     sessions_controller:
       invalid-signin: "Invalid email or password"
       notactive: "Account not activated. Check your email for the activation link."
@@ -74,3 +118,22 @@ en:
   users_mailer:
     account_activation:
       subject: "Account activation"
+  tours:
+    new:
+      button: "Add new tour"
+      add_tour: Add Tours
+    tour:
+      delete: "delete"
+      confirm: "You sure ?"
+      edit: "edit"
+    index:
+      title: Book Your Tour
+      header: Users
+      name_table: All Tours
+      name_user: Name Tour
+      start: Start Time
+      end: End Time
+      price: Price
+    edit:
+      edit_tour: Edit Tour
+      button: Change

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.dataTables-example').DataTable({
+  $('#dataTables-example').DataTable({
     responsive: true
   });
 });

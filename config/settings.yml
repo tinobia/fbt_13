@@ -1,7 +1,7 @@
 mail:
   from: nguyenvantrungnct@gmail.com
 gravatar:
-  size: 80
+  size: 30
 name_user:
   maximum: 50
 tel:
@@ -17,3 +17,6 @@ booking:
   url: https://www.booking.com/
 sessions:
   default_check: 1
+picture:
+  type: "image/jpeg,image/gif,image/png"
+  size: 30
