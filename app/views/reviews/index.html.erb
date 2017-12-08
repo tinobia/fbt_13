@@ -1,0 +1,12 @@
+<% if @reviews.any? %>
+  <div class="blog" id="blog">
+    <div class="container">
+      <h3 class="tittle"><%= t "blog" %></h3>
+      <%= render @reviews %>
+      <%= will_paginate %>
+    </div>
+  </div>
+<% else %>
+<h5 class="error_show_view"><%= t".error_show_view" %></h5>
+<% end %>
+

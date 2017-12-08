@@ -27,3 +27,4 @@
 //= require easing
 //= require easy-responsive-tabs
 //= require lightbox-plus-jquery.min
+//= require ckeditor

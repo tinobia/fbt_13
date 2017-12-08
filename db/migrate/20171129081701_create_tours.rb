@@ -9,6 +9,7 @@ class CreateTours < ActiveRecord::Migration[5.1]
       t.boolean :is_empty_slot, default: true
       t.boolean :is_open, default: true
       t.string :picture
+      t.integer :num_of_pass
       t.references :category_tour, foreign_key: true
 
       t.timestamps

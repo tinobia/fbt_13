@@ -7,8 +7,16 @@
   <div class=" col-md-5 blog-info-w3layouts">
     <div class="inner-info-w3ls">
       <h5><%= tour.name_tour %></h5>
-      <p class="para-agileits"><%= tour.price %></p>
-      <p class="para-agileits"><%= tour.num_of_pass %></p>
+      <p class="para-agileits">
+        <span>
+          <%= t ".price" %>
+        </span>
+        <%= tour.price %>
+      </p>
+      <p class="para-agileits">
+        <span><%= t ".num" %></span>
+        <%= tour.num_of_pass %>
+      </p>
     </div>
     <div class="inner-info-w3ls">
       <p class = "start-time">
@@ -18,10 +26,9 @@
         <%= l tour.endtime, format: :long %>
       </p>
     </div>
-    <a href="#" class="blog-more-agile" data-toggle="modal" data-target="#myModal<%= tour.id %>">
-      <%= t "read-more" %>
-    </a>
-      <%= link_to t(".booking-tour"), new_tourdetail_path(id: tour.id), class: "blog-more-agile" %>
+      <%= link_to t(".read-more"), tour_path(tour), class: "blog-more-agile"%>
+      <%= link_to t(".booking-tour"), new_tourdetail_path(id: tour.id),
+        class: "blog-more-agile" %>
   </div>
   <div class="clearfix"></div>
 </div>

@@ -8,8 +8,8 @@ class ToursController < ApplicationController
   end
 
   def show
-    @review = current_user.reviews.build
-    @reviews = @tour.order_by_created_at.reviews.paginate(page: params[:page], per_page: Settings.tours.per_page)
+    @reviews = Review.show_review_related(@tour.id).order_by_updated_at
+      .paginate(page: params[:page], per_page: Settings.tours.per_page)
   end
 
   def search

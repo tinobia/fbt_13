@@ -12,6 +12,8 @@ en:
   helpers:
     application_helper:
       basic_title: "Welcome to visit our website"
+    sessions_helper:
+      please_login: "Please Login"
   reviews:
     review:
       posted: "posted %{time} ago."
@@ -56,6 +58,8 @@ en:
     tour:
       default_pic: "shin.jpg"
       load_picture: "Load picture"
+      price: "Price/person: "
+      num: "Num of pass: "
     search:
       not_fond_tour: "No Tour Founded"
     review_form:
@@ -68,6 +72,7 @@ en:
       price: "Price: "
       total: "Total: "
       schedule: "schedule:"
+
     book_tour:
       button: "Submit"
       booking-online: "Booking Online"
@@ -82,6 +87,17 @@ en:
       slot: "Quality Booked Slots"
       price: "Total Price"
       cancel_tour: "Cancel Tour"
+
+      welcome: "Welcome to our tour"
+  reviews:
+    edit:
+      title: "Update review"
+      button: "Save"
+    review:
+      confirm_delete: "You sure?"
+      like: "Like"
+    index:
+      error_show_view: "Not found review to show"
   admins:
     users:
       user:
@@ -143,12 +159,13 @@ en:
       title: "Book Your Travel"
       signout: "Sign out"
       setting: "Settings"
-      logo: "logo.png"
+      pic: "logo.png"
       button: "Search"
       search: "Enter name tour"
       cat_tour_name: "Category Tour Name: "
       logo: "logo.png"
       url: "http://localhost:3000/"
+      review: "Reviews"
     footer:
       about: "About Us"
       contact: "Contact"
@@ -209,5 +226,7 @@ en:
       active: "Login successful"
     reviews_controller:
       not_success: "Tour not found or review was not saved or review nil"
-  tourdetail:
-    invalid_message: "Integer only. No sign allowed."
+      not_found_review: "Not found review"
+      success_update_review: "Update review successful"
+      deleted_review: "Deleted review successful"
+      deleted_review_fail: "Delete fail"
