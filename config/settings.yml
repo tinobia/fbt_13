@@ -20,3 +20,5 @@ sessions:
 picture:
   type: "image/jpeg,image/gif,image/png"
   size: 30
+tours:
+  per_page: 5

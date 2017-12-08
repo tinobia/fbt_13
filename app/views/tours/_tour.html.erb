@@ -1,15 +1,48 @@
-<tr class="odd gradeX">
-  <td>
-    <%= image_tag tour.picture, size: Settings.picture.size %>
-    <%= tour.name_tour %>
-  </td>
-  <td><%= tour.starttime %></td>
-  <td><%= tour.endtime %></td>
-  <td class="center">
-    <%= tour.price %>
-  </td>
-  <td class="center">
-    <%= link_to t(".edit"), edit_tour_path(tour) %>
-    | <%= link_to t(".delete"), tour, method: :delete, data: { confirm: t(".confirm") } %>
-  </td>
-</tr>
+<div class="blog-grid-w3-agileits">
+  <div class=" col-md-7 blog-img  blog-img1-agileits-w3layouts">
+    <a href="#" data-toggle="modal" data-target="#myModal<%= tour.id %>">
+      <%= image_tag tour.picture, alt: (t ".load_picture") %>
+    </a>
+  </div>
+  <div class=" col-md-5 blog-info-w3layouts">
+    <div class="inner-info-w3ls">
+      <h5><%= tour.name_tour %></h5>
+      <p class="para-agileits"><%= tour.price%></p>
+    </div>
+    <div class="inner-info-w3ls">
+      <p class = "start-time">
+        <span class = "fa fa-calendar"></span>
+        <%= l tour.starttime, format: :long %>
+        <span class = "fa fa-arrow-right"></span>
+        <%= l tour.endtime, format: :long %>
+      </p>
+    </div>
+    <a href="#" class="blog-more-agile" data-toggle="modal" data-target="#myModal<%= tour.id %>">
+      <%= t "read-more"%>
+    </a>
+    <%= link_to t(".booking-tour"), "#", class: "blog-more-agile" %>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="modal fade" id="myModal<%=tour.id%>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title"><%= tour.name_tour%></h5>
+      </div>
+      <hr>
+      <div class="modal-body">
+        <%= image_tag tour.picture, alt: (t ".load_picture"), class: "view-pic"  %>
+      </div>
+      <div class="modal-body">
+        <p><%= tour.content %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close"%>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

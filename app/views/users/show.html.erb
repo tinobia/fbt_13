@@ -7,13 +7,13 @@
           <div class="col-sm-4 col-md-4">
             <%= gravatar_for @user %>
           </div>
-          <div class="col-sm-6 col-md-6">
-            <h4><%= @user.name_user %></h4>
+          <div class="col-sm-5 col-md-5">
+            <h5><%= @user.name_user %></h5>
             <small>
-              <cite><%= @user.address %><i class="glyphicon glyphicon-map-marker">
+              <cite><%= @user.address %><i class="fa fa-map-marker">
               </i></cite>
             </small>
-            <i class="glyphicon glyphicon-envelope"></i><%= @user.email %>
+            <i class="fa fa-envelope"></i><%= @user.email %>
             <br />
             <i class="fa fa-phone"></i><%= @user.tel%>
             <br />

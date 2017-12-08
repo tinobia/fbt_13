@@ -1,9 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+
+  before_action :show_category_tour
   before_action :current_user
 
   private
+
+  def show_category_tour
+    @cat_tours = CategoryTour.all
+    return if @cat_tours.count > 0
+  end
 
   def logged_in_user
     return if logged_in?
@@ -12,9 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    if (user_id = session[:user_id])
+    if user_id = session[:user_id]
       @current_user ||= User.find_by id: user_id
-    elsif (user_id = cookies.signed[:user_id])
+    elsif user_id = cookies.signed[:user_id]
       user = User.find_by id: user_id
       if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in user
