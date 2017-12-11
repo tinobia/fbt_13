@@ -4,6 +4,9 @@
 @import 'variables';
 @import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400|Lobster);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url(https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -69,10 +72,6 @@ textarea {
     padding: 15px 15px;
     color: #337ab7;
     background-color: transparent;
-}
-
-.nav-header {
-  margin-top: -40px;
 }
 
 footer {
@@ -201,20 +200,18 @@ h4 {
 }
 
 .setting:hover{
-  background: #CCCCCC;
+  background: $pink-light;
 }
 
-.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
-
-small {
-display: block;
-line-height: 1.428571429;
-color: #999;
-}
+.glyphicon {  margin-bottom: 10px;margin-right: 10px; }
 
 .show{
   margin-top: 20px;
   text-align: left;
+}
+
+.log-in{
+  margin-top:50px;
 }
 
 .user-dropdown {
@@ -248,6 +245,7 @@ color: #999;
 }
 
 header{
+  margin-top: -50px;
   .container{
     background: $gray-medium-light;
   }
@@ -258,26 +256,41 @@ header{
     margin-right: 10px;
   }
   .dropdown-user{
-  background: $gray-medium-light;
+    background: $gray-medium-light;
   }
   .login{
-  margin-top: 15px;
-  font-family: "Lobster";
-  font-size: 25px;
+    margin-top: 15px;
+    font-family: "Lobster";
+    font-size: 25px;
+
   }
   .menu-main{
-  font-family: "Lobster";
-  font-size: 15px;
+    font-family: "Lobster";
+    font-size: 15px;
+    li .a{
+      &:hover {
+        color: $orange-light;
+        text-decoration: none;
+      }
+    }
+    .active{
+      color: $orange-light;
+    }
   }
 }
 
 footer{
   .social-icon:hover{
-  transform: scale(1.1);
+    transform: scale(1.1);
   }
-
   .social-icon:hover{
-  transform: scale(0.8);
-  transition-duration: 0.5s;
+    transform: scale(0.8);
+    transition-duration: 0.5s;
   }
+}
+
+.view-pic{
+  width: 50%;
+  height: 250px;
+  border-bottom: 6px solid blue;
 }

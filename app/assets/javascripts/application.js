@@ -12,6 +12,8 @@
 //
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require cable
-//= require datatable
-//= require datetimepicker
-//= require main
+//=require datatable
+//=require datetimepicker
+//=require main
+//= require jquery
+//= require bootstrap
