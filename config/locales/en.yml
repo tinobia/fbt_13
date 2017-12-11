@@ -13,7 +13,41 @@ en:
   helpers:
     application_helper:
       title: "Framgia Booking Tour"
-  admin:
+  admins:
+    users:
+      user:
+        delete: "delete"
+        confirm: "You sure ?"
+      index:
+        title: Book Your Tour
+        header: Users
+        name_table: All users table
+        name_user: Name User
+        tel: Tel
+        add: Address
+        gen: Gender
+    tours:
+      form_tour:
+        date_start: "Datetime to start"
+        date_end: "Datetime to end"
+      new:
+        button: "Add new tour"
+        add_tour: Add Tours
+      tour:
+        delete: "delete"
+        confirm: "You sure ?"
+        edit: "edit"
+      index:
+        title: Book Your Tour
+        header: Users
+        name_table: All Tours
+        name_user: Name Tour
+        start: Start Time
+        end: End Time
+        price: Price
+      edit:
+        edit_tour: Edit Tour
+        button: Change
     admin_header:
       users: "Users"
       setting: "Settingss"

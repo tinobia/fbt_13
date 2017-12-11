@@ -1,0 +1,15 @@
+<tr class="odd gradeX">
+  <td>
+    <%= image_tag tour.picture, size: Settings.picture.size %>
+    <%= tour.name_tour %>
+  </td>
+  <td><%= tour.starttime %></td>
+  <td><%= tour.endtime %></td>
+  <td class="center">
+    <%= tour.price %>
+  </td>
+  <td class="center">
+    <%= link_to t(".edit"), edit_tour_path(tour) %>
+    | <%= link_to t(".delete"), tour, method: :delete, data: { confirm: t(".confirm") } %>
+  </td>
+</tr>
