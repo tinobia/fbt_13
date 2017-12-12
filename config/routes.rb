@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   get "users", to: "users#index"
-  get "/addtour", to: "tours#new"
   get "/tours", to: "tours#index"
+  delete "/user_destroy", to: "admins/users#destroy"
+  delete "/tour_destroy", to: "admins/tours#destroy"
   resources :tours
   resources :users
   namespace :admins do
-    resources :tours, only: %i(index destroy update)
-    resources :users, only: %i(index destroy)
+    root "home#index"
+    resources :tours
+    resources :users
   end
 end

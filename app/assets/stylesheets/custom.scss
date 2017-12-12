@@ -2,11 +2,8 @@
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
 @import 'variables';
-@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
-@import url(https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -59,7 +56,6 @@ textarea {
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
-
   &:hover {
     color: white;
     text-decoration: none;
@@ -67,11 +63,15 @@ textarea {
 }
 
 .list-slidebar{
-    position: relative;
-    display: block;
-    padding: 15px 15px;
-    color: #337ab7;
-    background-color: transparent;
+  position: relative;
+  display: block;
+  padding: 15px 15px;
+  color: #337ab7;
+  background-color: transparent;
+}
+
+.nav-header {
+  margin-top: -40px;
 }
 
 footer {
@@ -97,6 +97,10 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.logo {
+  display: inline-block;
 }
 
 input, textarea, select, .uneditable-input {
@@ -203,7 +207,11 @@ h4 {
   background: $pink-light;
 }
 
-.glyphicon {  margin-bottom: 10px;margin-right: 10px; }
+small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999;
+}
 
 .show{
   margin-top: 20px;

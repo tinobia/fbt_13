@@ -10,17 +10,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login_success
-    log_in @user
-    params[:session][:remember_me] == Settings.sessions.default_check ? remember(@user) : forget(@user)
-    remember @user
-    if @user.admin?
-      redirect_to users_path
-    else
-      redirect_to root_url
-    end
-  end
-
   def login_fail
     flash.now[:danger] = t "controllers.sessions_controller.invalid-signin"
     render :new

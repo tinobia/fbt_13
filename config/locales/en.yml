@@ -12,7 +12,7 @@ en:
       alert: The form contains %{errors}.
   helpers:
     application_helper:
-      title: "Framgia Booking Tour"
+      basic_title: "Welcome to visit our website"
   admins:
     users:
       user:
@@ -78,21 +78,38 @@ en:
       news: "News"
       sentence: A product was designed by Trung & Nuong
   controllers:
+    admins:
+      admins_controller:
+        not_allowed: You must login in Admin
+      users_controller:
+        deleted: "User deleted"
+        failed_to_delete: "Failed to delete user"
+        not_found_user: "User was not be found"
+      tours_controller:
+        success: "Add a tour successfully"
+        failed_to_add: "Failed to add a new tour"
+        deleted: "Deleted successfully"
+        failed_to_delete: "Failed to delete Tour"
+        not_found_tour: "Tour wasnt found"
+        updated: Tour was updated
     users_controller:
       success: "Welcome to Ep Be Te"
       updated: "Profile Updated"
       login: "Please log in."
-      deleted: "User deleted"
-      failed_to_delete: "Failed to delete user"
+      success_update_user: "Update successful!!!"
+      fail_update_user: "Failed, update again :("
+      please_login: "Please log in."
+      not_correct_user: "Not correct user"
       not_found_user: "User was not be found"
       not_admin: Pls login in admin
     tours_controller:
-      success: "Add a tour successfully"
-      failed_to_add: "Failed to add a new tour"
-      deleted: "Deleted successfully"
-      failed_to_delete: "Failed to delete Tour"
       not_found_tour: "Tour wasnt found"
-      updated: Tour was updated
+    application_controller:
+      please_login: Please login
+    sessions_controller:
+      invalid-signin: "Invalid email or password"
+      notactive: "Account not activated. Check your email for the activation link."
+      active: "Login successful"
   users:
     index:
       title: Book Your Tour
@@ -102,9 +119,14 @@ en:
       tel: Tel
       add: Address
       gen: Gender
+    form:
+      male: "Male : "
+      female: "Female : "
     user:
       delete: "delete"
       confirm: "You sure ?"
+      not_found_tour: "Tour wasnt be found"
+      updated: Tour was updated
     new:
       signup: "Sign up"
       confirm: "Confirmation"
@@ -114,9 +136,6 @@ en:
       button: "Update"
     show:
       setting: "Settings"
-  helpers:
-    application_helper:
-      basic_title: "Welcome to visit our website"
   sessions:
     new:
       login: "Login"
@@ -126,29 +145,6 @@ en:
       login: "Login"
       forgetpassword: "Forgot password"
       rememember_me: "Remember me on this computer"
-  controllers:
-    users_controller:
-      success: "Welcome to Ep Be Te"
-      updated: "Profile Updated"
-      login: "Please log in."
-      deleted: "User deleted"
-      failed_to_delete: "Failed to delete user"
-      not_found_user: "User was not be found"
-      success_update_user: "Update successful!!!"
-      fail_update_user: "Failed, update again :("
-      please_login: "Please log in."
-      not_correct_user: "Not correct user"
-      not_admin: Please login in Admin
-    application_controller:
-      please_login: Please login
-    sessions_controller:
-      invalid-signin: "Invalid email or password"
-      notactive: "Account not activated. Check your email for the activation link."
-      active: "Login successful"
-    account_activations_controller:
-      edit:
-        success: "Account activated!"
-        danger: "Invalid activation link"
   users_mailer:
     account_activation:
       subject: "Account activation"

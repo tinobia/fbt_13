@@ -17,10 +17,9 @@
   <%= f.password_field :password_confirmation, class: "form-control" %>
 
   <center>
-    <%= f.text_field :gender, class: "form-control" %>
-    <%= f.label :male, "Male : " %>
+    <%= f.label :male, t(".male") %>
     <%= f.radio_button :gender, 0, checked: !@user.gender , class: "form-control gender-radio" %>
-    <%= f.label :female, "Female : " %>
+    <%= f.label :female, t(".female") %>
     <%= f.radio_button :gender, 1, checked: @user.gender, class: "form-control gender-radio" %>
   </center>
 
