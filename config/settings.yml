@@ -23,3 +23,14 @@ picture:
   size: 30
 tours:
   per_page: 5
+tourdetails:
+  book_tour:
+    minnum: 1
+    maxnum: 30
+    num_default: 1
+    price_default: 200
+  new:
+    num_default: 0
+admin:
+  header:
+    root_url: "http://localhost:3000/admins"

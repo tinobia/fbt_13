@@ -1,0 +1,67 @@
+<center>
+  <h3 class="tittle">
+    <%= t ".booking-online" %>
+  </h3>
+</center>
+<hr>
+<div class="form contact-w3-agileits">
+  <%= form_for @tourdetail do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <%= f.hidden_field :tour_id, value: @tour.id %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+    <center>
+      <div class="row">
+        <div class="col-sm-4" >
+          <p>
+            <span>
+              <%= t "fullname" %>
+            </span>
+            <%= @current_user.name_user %>
+          </p>
+        </div>
+        <div class="col-sm-4" >
+          <p>
+            <span>
+              <%= t "tel" %>
+            </span>
+            <%= @current_user.tel %>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <span>
+              <%= t "email" %>
+            </span>
+            <%= @current_user.email.downcase %>
+          </p>
+        </div>
+      </div>
+    </center>
+    <hr>
+    <div class="clearfix"></div>
+    <center class = "form book_tour">
+      <div class="row">
+        <div class="col-sm-4">
+          <p class="col-sm-5">
+            <%= t "quality" %>
+          </p>
+          <%= f.number_field :num_of_pass, min: Settings.tourdetails.book_tour.minnum,
+            max: Settings.tourdetails.book_tour.maxnum,
+            id: "num"%>
+          <p class = "error" id = "message_error"></p>
+        </div>
+        <div class="col-sm-4">
+          <p class="col-sm-5">
+            <span class = "fa fa-usd"></span>
+            <%= t "total_price" %>
+          </p>
+          <%= f.text_field :total_price, id: "total", class: "col-sm-5" %>
+        </div>
+        <div class="col-sm-4">
+          <%= f.submit value: (t ".button") %>
+        </div>
+      </div>
+    </center>
+    <div class="clearfix"></div>
+  <% end %>
+</div>

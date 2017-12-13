@@ -17,6 +17,71 @@ en:
       posted: "posted %{time} ago."
       confirm: "You sure ? "
       delete: delete
+  users:
+    index:
+      title: Book Your Tour
+      header: Users
+      name_table: All users table
+      name_user: Name User
+      tel: Tel
+      add: Address
+      gen: Gender
+    form:
+      male: "Male : "
+      female: "Female : "
+    user:
+      delete: "delete"
+      confirm: "You sure ?"
+      not_found_tour: "Tour wasnt be found"
+      updated: Tour was updated
+    new:
+      signup: "Sign up"
+      confirm: "Confirmation"
+      button: "Create my account"
+    edit:
+      update: "Update information"
+      button: "Update"
+    show:
+      setting: "Settings"
+  sessions:
+    new:
+      login: "Login"
+      welcome: "Welcome back."
+      email: "Email"
+      password: "Password"
+      login: "Login"
+      forgetpassword: "Forgot password"
+      rememember_me: "Remember me ?"
+  tours:
+    tour:
+      default_pic: "shin.jpg"
+      load_picture: "Load picture"
+    search:
+      not_fond_tour: "No Tour Founded"
+    review_form:
+        post_review: "Post your review ..."
+        review: Review
+  tourdetails:
+    new:
+      starttime: "Start time: "
+      endtime: "End time: "
+      price: "Price: "
+      total: "Total: "
+      schedule: "schedule:"
+    book_tour:
+      button: "Submit"
+      booking-online: "Booking Online"
+      fullname: "Full Name: "
+      tel: "Telephone: "
+      email: "Email: "
+      quality: "Quality:"
+      total_price: "Total Price"
+    show:
+      name_tour: "Name Tour"
+      preriod_time: "Time"
+      slot: "Quality Booked Slots"
+      price: "Total Price"
+      cancel_tour: "Cancel Tour"
   admins:
     users:
       user:
@@ -61,6 +126,8 @@ en:
       reviews: reviews
       categories_tour: Categories Tour
       tours: Tours
+      logo: "logo.png"
+      alt_logo: "Booking Your Travel"
     admin_footer:
       about: "About Us"
       contact: "Contact"
@@ -128,6 +195,12 @@ en:
       not_found_tour: "Tour wasnt found"
     tourdetails_controller:
       not_found_tourdetail: "Not Found Detail of This Tour"
+      over_slots: "So many slots than the rules"
+      booking_success: "You have booked this tour successful"
+      booking_fail: "Booking Tour Failed"
+      full: "This Tour is over slots, only 30 slots"
+      please_sign_up: "You need to registry a account for book tour"
+      not_found_tour: "Not found this tour"
     application_controller:
       please_login: Please login
     sessions_controller:
@@ -136,50 +209,5 @@ en:
       active: "Login successful"
     reviews_controller:
       not_success: "Tour not found or review was not saved or review nil"
-  users:
-    index:
-      title: Book Your Tour
-      header: Users
-      name_table: All users table
-      name_user: Name User
-      tel: Tel
-      add: Address
-      gen: Gender
-    form:
-      male: "Male : "
-      female: "Female : "
-    user:
-      delete: "delete"
-      confirm: "You sure ?"
-      not_found_tour: "Tour wasnt be found"
-      updated: Tour was updated
-    new:
-      signup: "Sign up"
-      confirm: "Confirmation"
-      button: "Create my account"
-    edit:
-      update: "Update information"
-      button: "Update"
-    show:
-      setting: "Settings"
-  sessions:
-    new:
-      login: "Login"
-      welcome: "Welcome back."
-      email: "Email"
-      password: "Password"
-      login: "Login"
-      forgetpassword: "Forgot password"
-      rememember_me: "Remember me on this computer"
-  tours:
-    tour:
-      default_pic: "shin.jpg"
-      load_picture: "Load picture"
-    search:
-      not_fond_tour: "No Tour Founded"
-    review_form:
-        post_review: "Post your review ..."
-        review: Review
-  users_mailer:
-    account_activation:
-      subject: "Account activation"
+  tourdetail:
+    invalid_message: "Integer only. No sign allowed."
