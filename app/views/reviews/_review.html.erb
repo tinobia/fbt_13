@@ -1,0 +1,23 @@
+<ul id="<%= review.id %>">
+  <li class= "list-comment row">
+    <div class="col-sm-2 wid-pic">
+      <%= link_to gravatar_for(review.user, size: Settings.gravatar.sizeM), review.user %>
+    </div>
+    <div class="col-sm-10">
+      <p class="user">
+        <%= link_to review.user.name_user, review.user %>
+      </p>
+      <span class="content mar-review">
+        <%= review.content %>
+      </span>
+      <div class = "content-review">
+        <span class="timestamp style-review">
+          <%= t(".posted", time: time_ago_in_words(review.created_at)) %>
+          <% if current_user?(review.user) %>
+            <%= link_to t(".delete"), "#", method: :delete, data: {confirm: t(".confirm")} %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </li>
+</ul>

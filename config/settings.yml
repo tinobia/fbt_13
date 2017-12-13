@@ -2,6 +2,7 @@ mail:
   from: nguyenvantrungnct@gmail.com
 gravatar:
   size: 30
+  sizeM: 50
 name_user:
   maximum: 50
 tel:

@@ -35,7 +35,8 @@ class TourdetailsController < ApplicationController
   end
 
   def find_tour_detail
-    return if @tourdetail = Tourdetail.find(params[:id])
+    @tourdetail = Tourdetail.find_by id: params[:id]
+    return if @tourdetail
     flash[:danger] = t "controllers.tourdetails_controller.not_found_tourdetail"
     redirect_to root_path
   end

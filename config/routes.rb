@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get "/search", to: "tours#search"
   delete "/user_destroy", to: "admins/users#destroy"
   delete "/tour_destroy", to: "admins/tours#destroy"
-  resources :tours
+  resources :tours do
+    resources :reviews, only: %i(create destroy)
+  end
   resources :users
   resources :tourdetails
   namespace :admins do
