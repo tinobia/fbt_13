@@ -12,6 +12,11 @@ en:
   helpers:
     application_helper:
       basic_title: "Welcome to visit our website"
+  reviews:
+    review:
+      posted: "posted %{time} ago."
+      confirm: "You sure ? "
+      delete: delete
   admins:
     users:
       user:
@@ -129,6 +134,8 @@ en:
       invalid-signin: "Invalid email or password"
       notactive: "Account not activated. Check your email for the activation link."
       active: "Login successful"
+    reviews_controller:
+      not_success: "Tour not found or review was not saved or review nil"
   users:
     index:
       title: Book Your Tour
@@ -170,6 +177,9 @@ en:
       load_picture: "Load picture"
     search:
       not_fond_tour: "No Tour Founded"
+    review_form:
+        post_review: "Post your review ..."
+        review: Review
   users_mailer:
     account_activation:
       subject: "Account activation"

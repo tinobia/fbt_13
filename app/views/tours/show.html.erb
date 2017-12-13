@@ -1,0 +1,26 @@
+<% provide :title, @tour.name_tour %>
+<div class="container show" >
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="well well-md">
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <%= image_tag @tour.picture, alt: (t ".load_picture"), class: "view-pic"  %>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <h4><%= @tour.name_tour %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-xs-6 col-sm-6 col-md-6" >
+        <%= render "review_form" %>
+        <div>
+          <% if @tour.reviews.any? %>
+            <%= render partial: "reviews/review", collection: @reviews, as: :review %>
+          <% end %>
+          <%= will_paginate @reviews %>
+        </div>
+      </div>
+  </div>
+</div>

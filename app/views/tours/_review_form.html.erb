@@ -1,0 +1,8 @@
+<%= form_for current_user.reviews.build, url: tour_reviews_path(@tour)  do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: t(".post_review") %>
+    <%= f.hidden_field :tour_id, value: @tour.id %>
+  </div>
+  <%= f.submit t(".review"), class: "btn btn-primary" %>
+<% end %>
