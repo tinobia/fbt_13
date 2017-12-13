@@ -17,9 +17,8 @@ class User < ApplicationRecord
     format: {with: VALID_TEL_REGEX}
   scope :user_sort, ->{order(created_at: :desc)}
 
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token
   before_save :downcase_email
-  before_create :create_activation_digest
 
   class << self
     def digest string
@@ -51,12 +50,4 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  def create_activation_digest
-    self.activation_token  = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
-
-  def activate
-    update_columns activated: true, activated_at: Time.zone.now
-  end
 end

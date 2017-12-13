@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   get "users", to: "users#index"
   get "/tours", to: "tours#index"
+  get "/search", to: "tours#search"
   delete "/user_destroy", to: "admins/users#destroy"
   delete "/tour_destroy", to: "admins/tours#destroy"
   resources :tours
   resources :users
+  resources :tourdetails
   namespace :admins do
     root "home#index"
     resources :tours

@@ -1,0 +1,13 @@
+<% if @tours.any? %>
+  <div class="blog" id="blog">
+    <div class="container">
+      <h3 class="tittle"><%= t "result_search"%></h3>
+      <%= render @tours %>
+      <%= will_paginate %>
+    </div>
+  </div>
+<% else %>
+  <center>
+    <h3 class="tittle"><%= t "not_fond_tour" %></h3>
+  </center>
+<% end %>

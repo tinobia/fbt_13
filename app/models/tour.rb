@@ -7,4 +7,9 @@ class Tour < ApplicationRecord
 
   validates :name_tour, presence: true
   validates :content, presence: true
+
+  scope :show_tour, ->{order "id DESC"}
+  scope :search_all, ->(name_tour, category_tour_id) do
+    where "name_tour LIKE ? AND category_tour_id = ?", "%#{name_tour}%", category_tour_id
+  end
 end

@@ -1,5 +1,4 @@
 en:
-  hello: "Hello world"
   static_pages:
     home:
       test: "Welcome to the Framgia Booking Tour"
@@ -72,11 +71,26 @@ en:
       title: "Book Your Travel"
       signout: "Sign out"
       setting: "Settings"
+      logo: "logo.png"
+      button: "Search"
+      search: "Enter name tour"
+      cat_tour_name: "Category Tour Name: "
+      logo: "logo.png"
+      url: "http://localhost:3000/"
     footer:
       about: "About Us"
       contact: "Contact"
       news: "News"
       sentence: A product was designed by Trung & Nuong
+      reach_us: "Reach Us"
+      addrress1: "23046 Three Notch Road California,"
+      addrress2: "MD 20619, USA"
+      phone: " (+0) 123-456-7890"
+      mail_to_my_email: "mailto:info@example.com"
+      my_email: "info@example.com"
+      phone:  (+0) 123-456-7890
+      addrress1: "6 Floor Plaza "
+      addrress2: "|| Big C"
   controllers:
     admins:
       admins_controller:
@@ -103,7 +117,12 @@ en:
       not_found_user: "User was not be found"
       not_admin: Pls login in admin
     tours_controller:
+      not_found_tour: "Not found tour which you are searching"
+      must_choose_a_cat: "You haven't choosed a category tour to search yet!!!"
+      no_tour: "There isn't a tour to show"
       not_found_tour: "Tour wasnt found"
+    tourdetails_controller:
+      not_found_tourdetail: "Not Found Detail of This Tour"
     application_controller:
       please_login: Please login
     sessions_controller:
@@ -145,25 +164,12 @@ en:
       login: "Login"
       forgetpassword: "Forgot password"
       rememember_me: "Remember me on this computer"
+  tours:
+    tour:
+      default_pic: "shin.jpg"
+      load_picture: "Load picture"
+    search:
+      not_fond_tour: "No Tour Founded"
   users_mailer:
     account_activation:
       subject: "Account activation"
-  tours:
-    new:
-      button: "Add new tour"
-      add_tour: Add Tours
-    tour:
-      delete: "delete"
-      confirm: "You sure ?"
-      edit: "edit"
-    index:
-      title: Book Your Tour
-      header: Users
-      name_table: All Tours
-      name_user: Name Tour
-      start: Start Time
-      end: End Time
-      price: Price
-    edit:
-      edit_tour: Edit Tour
-      button: Change

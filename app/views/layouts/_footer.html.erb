@@ -1,0 +1,45 @@
+<footer class="footer">
+  <div class="reach-wthree">
+    <div class="container">
+      <h3><%= t "reach_us"%></h3>
+      <div class="col-md-offset-9">
+        <p><%= t ".addrress1" %><%= t ".addrress2" %></p>
+        <h6><span class="fa fa-phone" aria-hidden="true"></span><%= t ".phone" %></h6>
+      </div>
+    </div>
+  </div>
+  <div class="w3l_footer_agileinfo">
+    <div class="container">
+      <div class="col-md-3 mailadd-w3ls">
+        <p>
+          <span class="fa fa-envelope social-icon" aria-hidden="true"></span>
+          <%= mail_to t "mail_to_my_email" do %>
+            <%= t "my_email" %>
+          <% end %>
+        </p>
+      </div>
+      <div class="col-md-6  ">
+        <ul class="nav-w3ls">
+          <li><%= link_to t(".home"), root_path, class: "active" %></li>
+          <li><%= link_to t(".tours"), tours_path %></li>
+          <li><%= link_to t(".help"), "#" %></li>
+          <li><%= link_to t(".contact"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-md-3 w3l-social">
+        <ul class="top-right-info-w3ls">
+          <li class="social-icon"><i class="fa fa-facebook" aria-hidden="true" ></i></li>
+          <li class="social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+          <li class="social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+  <div class="w3l_footer_agileinfo">
+    <div class="container">
+      <p><%= t(".sentence") %></p>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+</footer>
