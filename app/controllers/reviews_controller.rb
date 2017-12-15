@@ -4,11 +4,12 @@ class ReviewsController < ApplicationController
   before_action :find_tour, only: %i(create destroy)
 
   def create
-    @review = current_user.reviews.build(review_params)
-    unless @review.save && @review
+    @review = current_user.reviews.new review_params
+    if @review.save && @review
+      reponse_action
+    else
       flash[:danger] = t "controllers.reviews_controller.not_success"
     end
-    redirect_to tour_path @tour
   end
 
   def index
@@ -39,7 +40,6 @@ class ReviewsController < ApplicationController
   private
 
   def find_review
-
     @review = Review.find_by id: params[:id]
     return if @review
     flash[:danger] = t "controllers.reviews_controller.not_found"
@@ -51,6 +51,17 @@ class ReviewsController < ApplicationController
     return if @tour
     flash[:danger] = t "controllers.reviews_controller.not_found_tour"
     redirect_to root_path
+  end
+
+  def reponse_action
+    @review = current_user.reviews.build
+    @reviews = @tour.reviews.order_by_created_at.paginate(page: params[:page],
+      per_page: Settings.tours.per_page)
+    find_tour
+    respond_to do |format|
+      format.html{}
+      format.js
+    end
   end
 
   def review_params

@@ -97,6 +97,7 @@ en:
       welcome: "Welcome to our tour"
   comments:
     comment:
+      posted: "posted %{time} ago."
       confirm: "You sure ? "
       delete: delete
   admins:

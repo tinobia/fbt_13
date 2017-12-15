@@ -5,10 +5,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    unless @comment.save && @comment
+    if @comment.save && @comment
+      reponse_action
+    else
       flash[:danger] = t "controllers.comments_controller.not_success"
     end
-    redirect_to tour_path @tour
   end
 
   def destroy
@@ -41,6 +42,18 @@ class CommentsController < ApplicationController
     return if @tour
     flash[:danger] = t "controllers.reviews_controller.not_found_tour"
     redirect_to root_path
+  end
+
+  def reponse_action
+    find_tour
+    @comments = @review.comments.order_by_created_at.paginate(page: params[:page],
+      per_page: Settings.tours.per_page)
+    @reviews = @tour.reviews.order_by_created_at.paginate(page: params[:page],
+      per_page: Settings.tours.per_page)
+    respond_to do |format|
+      format.html{}
+      format.js
+    end
   end
 
   def comment_params
