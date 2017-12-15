@@ -43,22 +43,6 @@ class TourdetailsController < ApplicationController
     params.require(:tourdetail).permit(:user_id, :tour_id, :num_of_pass, :total_price)
   end
 
-  def add_numpass_success
-    @tour = Tour.find_by id: @tourdetail.tour_id
-    @num_of_pass = (@tour.num_of_pass.to_i + @tourdetail.num_of_pass)
-    check_status_slot
-  end
-
-  def check_status_slot
-    if @num_of_pass > Settings.tourdetails.book_tour.maxnum
-      check_over_slot
-    elsif @num_of_pass < Settings.tourdetails.book_tour.maxnum
-      check_smaller_maxnum
-    else
-      check_equal_maxnum
-    end
-  end
-
   def check_over_slot
     flash[:danger] = t "controllers.tourdetails_controller.over_slots"
     false
@@ -97,5 +81,36 @@ class TourdetailsController < ApplicationController
     return if @tourdetail
     flash[:danger] = t "controllers.tourdetails_controller.not_found_tourdetail"
     redirect_to root_path
+  end
+
+  def add_numpass_success
+    find_tour @tourdetail
+    @num_of_pass = (@tour.num_of_pass.to_i + @tourdetail.num_of_pass)
+    check_status_slot
+  end
+
+  def check_status_slot
+    if @num_of_pass > Settings.tourdetails.book_tour.maxnum
+      check_over_slot
+    elsif @num_of_pass < Settings.tourdetails.book_tour.maxnum
+      check_smaller_maxnum
+    else
+      check_equal_maxnum
+    end
+  end
+
+  def check_over_slot
+    flash[:danger] = t "controllers.tourdetails_controller.over_slots"
+    false
+  end
+
+  def check_smaller_maxnum
+    @tour.update_attribute :num_of_pass, @num_of_pass
+    true
+  end
+
+  def check_equal_maxnum
+    @tour.update_columns is_open: false, num_of_pass: @num_of_pass
+    true
   end
 end

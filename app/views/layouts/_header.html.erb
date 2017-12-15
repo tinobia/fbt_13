@@ -3,17 +3,20 @@
   <div class="container">
     <nav class="row">
       <div class="logo col-md-3" data-toggle="tooltip" data-placement="bottom" >
-        <%= link_to image_tag((t ".logo")), (t ".url") %>
+        <%= link_to image_tag((t ".pic")), (t ".url") %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <ul class="nav navbar-nav menu-main">
           <li><%= link_to t(".home"), root_path, class: "active item-menu" %></li>
           <li><%= link_to t(".tours"), tours_path, class: "item-menu" %></li>
+          <% if current_user.present? %>
+            <li><%= link_to t(".review"), user_reviews_path(current_user), class: "item-menu" %></li>
+          <% end %>
           <li><%= link_to t(".help"), "#", class: "item-menu" %></li>
           <li><%= link_to t(".contact"), "#", class: "item-menu" %></li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="nav navbar-nav navbar-right">
         <% if @current_user.present? %>
           <ul>

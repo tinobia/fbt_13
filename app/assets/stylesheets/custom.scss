@@ -2,7 +2,7 @@
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
 @import 'variables';
-@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Roboto|Pacifico:400|Lobster|Pangolin|Satisfy);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 @mixin box_sizing {
@@ -13,7 +13,7 @@
 
 body {
   padding-top: 60px;
-  font: normal 14px Roboto,arial,sans-serif;
+  font: normal 14px Roboto;
   img:hover{
     opacity: 0.5;
   }
@@ -528,4 +528,79 @@ ul li {
     color: red;
     font-style: italic;
   }
+}
+
+.show_tour{
+  h1, h3{
+    font-family: "Satisfy";
+    color: #009966;
+  }
+  .img_tour{
+    width: 100%;
+    height: 200px;
+  }
+  pre{
+    background: AliceBlue;
+    font-style: italic;
+    text-align: left;
+    border: none;
+  }
+  .detail{
+    width: 100%;
+    height: 250px;
+  }
+  .fa {
+    padding: 5px 10px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-thumbs-o-up {
+    background: #55ACEE;
+    color: white;
+    border-radius: 100%;
+  }
+
+  textarea{
+    width: 100%;
+    border: none;
+    font-family: "Satisfy";
+    font-size: 18px;
+    padding: 0 20px;
+    background: Silver;
+  }
+}
+
+.reviews{
+  width: 100%;
+  background: white;
+  margin: 10px 0;
+  padding: 20px;
+  .acc_info{
+    float: left;
+  }
+  .time_review{
+    font-weight: bold;
+  }
+}
+
+.edit_review{
+  h3{
+    font-family: "Satisfy";
+    font-size: 25px;
+    color: #009966;
+    text-align: center;
+    margin: 10px;
+  }
+}
+
+.error_show_view{
+  color: red;
+  font-style: italic;
+  font-weight: bold;
 }

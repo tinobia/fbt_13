@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   get "users", to: "users#index"
   get "/tours", to: "tours#index"
   get "/search", to: "tours#search"
+  get "/booking_request", to: "tourdetails#new"
   delete "/user_destroy", to: "admins/users#destroy"
   delete "/tour_destroy", to: "admins/tours#destroy"
   resources :tours do
     resources :reviews, only: %i(create destroy)
   end
-  resources :users
   resources :tourdetails
+  resources :users do
+    resources :reviews, except: :create
+  end
   namespace :admins do
     root "home#index"
     resources :tours

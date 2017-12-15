@@ -13,6 +13,8 @@ module Admins
 
     def edit; end
 
+    def show; end
+
     def update
       if @tour.update_attributes tour_params
         flash[:success] = t "controllers.admins.tours_controller.updated"

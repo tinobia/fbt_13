@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20171201020017) do
     t.boolean "is_empty_slot", default: true
     t.boolean "is_open", default: true
     t.string "picture"
+    t.integer "num_of_pass"
     t.bigint "category_tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
