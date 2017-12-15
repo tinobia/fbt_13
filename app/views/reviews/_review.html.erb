@@ -1,53 +1,34 @@
-<div class = "reviews">
-  <div class="row">
-    <div class = "acc_info">
-      <%= gravatar_for @current_user %>
-      <p><%= @current_user.name_user %>&nbsp;
-        <i class = "fa fa-pencil" ></i>
-        <span class = "time_review">
-          <%=l review.updated_at, fotmat: :long %>
+<li id="<%= review.id %>">
+  <div class= "list-comment row">
+    <div class="col-sm-2 wid-pic">
+      <%= link_to gravatar_for(review.user, size: Settings.gravatar.sizeM), review.user %>
+    </div>
+    <div class="col-sm-10">
+      <div class = "float-review">
+        <p class="user align-name-user">
+          <%= link_to review.user.name_user, review.user %>
+        </p>
+        <span class="content mar-review">
+          <%= review.content %>
         </span>
-      </p>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-sm-9">
+        <div class = "content-review">
+          <span class="timestamp style-review">
+            <% if current_user?(review.user) %>
+              <%=time_ago_in_words review.created_at %>
+              <%= link_to "", tour_review_path(@tour,id: review.id),
+                method: :delete, data: {confirm: t(".confirm")}, class: "fa fa-trash-o" %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <ul>
+        <% if review.comments.any? %>
+          <%= render partial: "comments/comment", collection: review.comments, as: :comment %>
+        <% end %>
+      </ul>
       <div>
-        <p><%= review.content %></p>
+        <%= render "reviews/comment_form", review: review  %>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-1">
-        <p>
-          <i class="fa fa-thumbs-up"></i>
-        </p>
-    </div>
-    <div class="col-sm-1">
-        <p>
-          <i class="fa fa-comment"></i>
-        </p>
-    </div>
-    <% if @current_user.id == review.user_id %>
-      <div class = "col-sm-10">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p>
-                <i class="fa fa-pencil-square-o"></i>
-                <%= link_to t(".edit"), edit_user_review_path(current_user, review) %>
-                &nbsp;
-              </p>
-            </li>
-            <li>
-              <p>
-                <i class="fa fa-trash-o"></i>
-                <%= link_to t(".delete"), user_review_path(current_user, review), method: :delete,
-                  data: {confirm: (t ".confirm_delete")} %>
-              </p>
-            </li>
-          </ul>
-      </div>
-     <% end %>
-  </div>
-</div>
+</li>

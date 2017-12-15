@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   delete "/user_destroy", to: "admins/users#destroy"
   delete "/tour_destroy", to: "admins/tours#destroy"
   resources :tours do
-    resources :reviews, only: %i(create destroy)
+    resources :reviews, only: %i(create destroy) do
+      resources :comments, only: %i(create destroy)
+    end
   end
   resources :tourdetails
   resources :users do

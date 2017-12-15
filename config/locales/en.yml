@@ -16,9 +16,16 @@ en:
       please_login: "Please Login"
   reviews:
     review:
-      posted: "posted %{time} ago."
       confirm: "You sure ? "
       delete: delete
+    edit:
+      title: "Update review"
+      button: "Save"
+    index:
+      error_show_view: "Not found review to show"
+    comment_form:
+      post_comment: post your comment
+      comment: comment
   users:
     index:
       title: Book Your Tour
@@ -87,17 +94,11 @@ en:
       slot: "Quality Booked Slots"
       price: "Total Price"
       cancel_tour: "Cancel Tour"
-
       welcome: "Welcome to our tour"
-  reviews:
-    edit:
-      title: "Update review"
-      button: "Save"
-    review:
-      confirm_delete: "You sure?"
-      like: "Like"
-    index:
-      error_show_view: "Not found review to show"
+  comments:
+    comment:
+      confirm: "You sure ? "
+      delete: delete
   admins:
     users:
       user:
@@ -226,7 +227,17 @@ en:
       active: "Login successful"
     reviews_controller:
       not_success: "Tour not found or review was not saved or review nil"
-      not_found_review: "Not found review"
       success_update_review: "Update review successful"
-      deleted_review: "Deleted review successful"
-      deleted_review_fail: "Delete fail"
+      deleted: "Delete comment successfully "
+      failed_to_delete: "Failed to delete"
+      not_found_review: "Review not found"
+      not_found_tour: "Tour wasnt found"
+    comments_controller:
+      not_success: "review not found or comment was not saved or comment nil"
+      not_found_review: "Review not found"
+      not_found_comment: "Comment not found"
+      deleted: "Delete comment successfully "
+      failed_to_delete: "Failed to delete"
+  users_mailer:
+    account_activation:
+      subject: "Account activation"

@@ -1,0 +1,8 @@
+<%= form_for [@tour, review, review.comments.build] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field input-textarea">
+    <%= f.text_area :content, placeholder: t(".post_comment"), class: "input-textarea" %>
+    <%= f.hidden_field :review_id, value: review.id %>
+  </div>
+  <%= f.submit t(".comment"), class: "btn btn-primary col-sm-offset-8 button-comment" %>
+<% end %>

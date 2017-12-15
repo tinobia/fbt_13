@@ -1,0 +1,24 @@
+<li id="<%= comment.id %>">
+  <div class= "list-comment row">
+    <div class="col-sm-2 wid-pic">
+      <%= link_to gravatar_for(comment.user, size: Settings.gravatar.sizeM), comment.user %>
+    </div>
+    <div class="col-sm-10 float-comment">
+      <p class="user align-name-user">
+        <%= link_to comment.user.name_user, comment.user %>
+      </p>
+      <span class="content">
+        <%= comment.content %>
+      </span>
+      <div class = "content-review">
+        <span class="timestamp style-review">
+          <% if current_user?(comment.user) %>
+            <%= time_ago_in_words comment.created_at %>
+            <%= link_to "", tour_review_comment_path(@tour, comment.review, id: comment.id),
+              method: :delete, data: {confirm: t(".confirm")}, class: "fa fa-trash-o" %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+</li>
