@@ -34,3 +34,5 @@ tourdetails:
 admin:
   header:
     root_url: "http://localhost:3000/admins"
+time_booked:
+  day: 2

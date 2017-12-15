@@ -22,5 +22,12 @@
       </tr>
     </tbody>
   </table>
-  <button type="button" class="btn btn-danger col-md-offset-10"><%= t ".cancel_tour" %></button>
+  <% if check_time_booking_tour @tourdetail %>
+    <button type="button" class="btn btn-danger col-md-offset-10">
+      <%= link_to t(".cancel_tour"), tourdetail_path(@tourdetail),
+        method: :delete, data: { confirm: t(".confirm") } %>
+    </button>
+  <% else %>
+    <p class = "alert-cancel"><%= t".cant_cancel" %></p>
+  <% end %>
 </div>

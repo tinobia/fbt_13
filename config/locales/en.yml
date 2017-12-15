@@ -79,7 +79,6 @@ en:
       price: "Price: "
       total: "Total: "
       schedule: "schedule:"
-
     book_tour:
       button: "Submit"
       booking-online: "Booking Online"
@@ -93,8 +92,10 @@ en:
       preriod_time: "Time"
       slot: "Quality Booked Slots"
       price: "Total Price"
-      cancel_tour: "Cancel Tour"
+      cancel_tour: "Cancel booking tour"
       welcome: "Welcome to our tour"
+      confirm: You will cancel your booking tour ?
+      cant_cancel : You can't cancel your booking tour.
   comments:
     comment:
       posted: "posted %{time} ago."
@@ -220,6 +221,8 @@ en:
       full: "This Tour is over slots, only 30 slots"
       please_sign_up: "You need to registry a account for book tour"
       not_found_tour: "Not found this tour"
+      deleted: You cancelled your booking tour successful
+      failed_to_delete: Failed to delete
     application_controller:
       please_login: Please login
     sessions_controller:

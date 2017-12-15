@@ -1,4 +1,6 @@
 class TourdetailsController < ApplicationController
+  before_action :find_tour_detail, only: %i(show destroy)
+
   def new
     if @current_user.present?
       user_present
@@ -17,6 +19,18 @@ class TourdetailsController < ApplicationController
     end
   end
 
+  def destroy
+    if @tourdetail.destroy
+      find_tour @tourdetail
+      @num_of_pass = (@tour.num_of_pass.to_i - @tourdetail.num_of_pass.to_i)
+      check_smaller_maxnum
+      flash[:success] = t "controllers.tourdetails_controller.deleted"
+    else
+      flash[:danger] = t "controllers.tourdetails_controller.failed_to_delete"
+    end
+    redirect_to root_path
+  end
+
   def book_pass
     if add_numpass_success
       flash[:success] = t "controllers.tourdetails_controller.booking_success"
@@ -33,7 +47,6 @@ class TourdetailsController < ApplicationController
   end
 
   def show
-    find_tour_detail
     find_tour @tourdetail
   end
 

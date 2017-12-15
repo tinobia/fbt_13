@@ -27,9 +27,11 @@
           <%= render partial: "comments/comment", collection: review.comments, as: :comment %>
         <% end %>
       </ul>
-      <div id = "new-comment" >
-        <%= render "reviews/comment_form", review: review  %>
-      </div>
+      <% if current_user.present? %>
+        <div id = "new-comment" >
+          <%= render "reviews/comment_form", review: review  %>
+        </div>
+      <% end %>
     </div>
   </div>
 </li>

@@ -21,9 +21,11 @@
           <pre><%= @tour.content %></pre>
         </div>
       </div>
-      <div id = "new-review">
-        <%= render "tours/review_form" %>
-      </div>
+      <% if current_user.present? %>
+        <div id = "new-review">
+          <%= render "tours/review_form" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class = "row">
