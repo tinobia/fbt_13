@@ -1,0 +1,27 @@
+<div class="container">
+  <h4>Welcome to our tour</h4>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th><%= t "name_tour" %></th>
+        <th><%= t "preriod_time" %></th>
+        <th><%= t "slot" %></th>
+        <th><%= t "price" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><%= @tour.name_tour %></th>
+        <td>
+          <%= l @tour.starttime, format: :long %>
+          <i class = "fa fa-arrow-right"></i>
+          <%= l @tour.endtime, format: :long %>
+        </td>
+        <td><%= @tourdetail.num_of_pass %></td>
+        <td><%= @tourdetail.total_price %></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-danger col-md-offset-10"><%= t "cancel_tour" %></button>
+</div>
+

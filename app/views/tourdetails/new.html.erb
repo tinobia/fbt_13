@@ -1,0 +1,62 @@
+<div class = "new-tour">
+  <div class="container">
+    <hr>
+    <h3><%= @tour.name_tour %></h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @tour.picture, class: "img-tour" %>
+      </div>
+      <div class="col-md-7">
+        <ul>
+          <li>
+            <p>
+              <i class="fa fa-forward"></i>
+              &nbsp;<%= t ".starttime" %>
+              <span><%= l @tour.starttime, format: :long %></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-forward"></i>
+              &nbsp;<%= t ".endtime" %>
+              <span>
+                <%= l @tour.endtime, format: :long %>
+              </span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-forward"></i>
+              &nbsp;<%= t ".price" %>
+              <span id = "price"><%= @tour.price %></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-forward"></i>
+              &nbsp;<%= t ".total" %>
+              <span id = "num_of_pass"><%= @tour.num_of_pass %></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-forward"></i>
+              &nbsp;<%= t ".schedule" %>
+            </p>
+            <pre><%= @tour.content %></pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="booking-tour">
+      <div class="row">
+        <div>
+          <%= render "book_tour" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

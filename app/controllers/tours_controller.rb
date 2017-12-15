@@ -2,7 +2,7 @@ class ToursController < ApplicationController
   before_action :find_tour, only: :show
 
   def index
-    @tours = Tour.show_tour.paginate(page: params[:page], per_page: Settings.tours.per_page)
+    @tours = Tour.show_tour_is_open.paginate(page: params[:page], per_page: Settings.tours.per_page)
     return if @tours.any?
     flash.now[:danger] = t "controllers.tours_controller.no_tour"
   end

@@ -1,9 +1,9 @@
 <header>
   <div id="wrapper">
-    <nav class="navbar navbar-default navbar-static-top nav-header" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top nav-header" role="navigation">
       <div class="navbar-header">
         <div class="logo">
-          <%= link_to image_tag("logo.png", alt: "Booking Your Travel"), "http://localhost:3000/admin" %>
+          <%= link_to image_tag( (t ".logo")), Settings.admin.header.root_url %>
         </div>
       </div>
       <ul class="nav navbar-top-links navbar-right">
@@ -50,9 +50,13 @@
                 <%= link_to t(".users"), admins_users_path %>
               </div>
             </li>
-            <li>
-              <a href="#"><i class="fa fa-plane icon-side-bar"></i><%= t(".tours")%><span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level">
+            <li class="dropdown">
+              <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                <i class="fa fa-plane icon-side-bar"></i>
+                <%= t (".tours") %>
+                <span class="fa arrow"></span>
+              </a>
+              <ul class="dropdown-menu">
                 <li>
                   <div class="list-slidebar">
                     <i class="fa fa-plus-circle second-level-icon"></i>

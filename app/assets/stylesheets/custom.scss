@@ -479,3 +479,53 @@ h1,h2,h3,h4,h5,h6 {
   color: #90949c;
   font-size: 11px;
 }
+
+ul li {
+  list-style: none;
+}
+
+.book_tour{
+  .styled-input input[type="text"]:hover,
+  .styled-input input[type="email"]:hover,
+  .contact-w3-agileits form textarea:hover {
+    border-color: #777;
+    transition: 0.5s all;
+  }
+
+  .styled-input {
+    float: left;
+    width: 32%;
+  }
+
+  .styled-input:nth-child(2) {
+    margin: 0 2%;
+  }
+
+  .contact-w3-agileits input[type="submit"] {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #ee4f4f;
+    border: 3px solid #ee4f4f;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1.3em;
+    padding: 0.5em 4em;
+    transition: 0.5s all;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+  }
+
+  .contact-w3-agileits input[type="submit"]:hover {
+    background: #168eea;
+    border: 3px solid #168eea;
+    color: #fff;
+    transition: 0.5s all;
+  }
+
+  .error{
+    color: red;
+    font-style: italic;
+  }
+}

@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap.min
+//= require bootstrap-3.1.1.min
 //= require moment
 //= require cable
 //= require main
@@ -27,5 +27,3 @@
 //= require easing
 //= require easy-responsive-tabs
 //= require lightbox-plus-jquery.min
-//= require jquery-2.2.3.min
-//= require jquery-ui
