@@ -21,37 +21,15 @@
           <pre><%= @tour.content %></pre>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-5 col-md-5">
-          <a href="#" data-toggle="modal" data-target="#myModal" >
-            <button><%= t".create_review" %></button>
-          </a>
-        </div>
-        <div class="modal fade" id = "myModal" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3><%= t ".title" %></h3>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                <form action="#" method="post" accept-charset="utf-8">
-                  <textarea name="" id="" cols="30" rows="10"></textarea>
-                  <input type="submit" name="" value="Post" class="btn btn-default">
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                  <%= t "close"%>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <%= render "tours/review_form" %>
       </div>
     </div>
   </div>
   <div class = "row">
-    <%= render @reviews %>
+    <ul class = "col-md-6 col-md-offset-4">
+      <%= render @reviews %>
+      <%= will_paginate @reviews %>
+    </ul>
   </div>
 </div>

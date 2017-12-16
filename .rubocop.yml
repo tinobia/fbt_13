@@ -274,7 +274,7 @@ Style/HashSyntax:
     - hash_rockets
 
 Style/IfUnlessModifier:
-  MaxLineLength: 80
+  Metrics/LineLength: 80
 
 # Checks the indentation of the first key in a hash literal.
 Layout/IndentHash:
@@ -500,7 +500,7 @@ Naming/VariableName:
     - camelCase
 
 Style/WhileUntilModifier:
-  MaxLineLength: 80
+  Metrics/LineLength: 80
 
 Style/WordArray:
   MinSize: 0

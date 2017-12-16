@@ -550,7 +550,6 @@ ul li {
     height: 250px;
   }
   .fa {
-    padding: 5px 10px;
     font-size: 20px;
     text-align: center;
     text-decoration: none;
@@ -603,4 +602,29 @@ ul li {
   color: red;
   font-style: italic;
   font-weight: bold;
+}
+
+.input-textarea{
+  margin-top: 5px;
+  border-radius: 10px;
+  width: 90%;
+  font-size: 13px;
+}
+
+.button-comment{
+  font-size: 10px;
+  padding: 5px 2px;
+  margin-top: -5px;
+}
+
+.float-review{
+  width: 20%;
+}
+
+.float-comment{
+  width: 40%;
+}
+
+.align-name-user{
+  text-align: left;
 }

@@ -48,17 +48,6 @@ class TourdetailsController < ApplicationController
     false
   end
 
-  def check_smaller_maxnum
-    @tour.update_attribute :num_of_pass, @num_of_pass
-    true
-  end
-
-  def check_equal_maxnum
-    @tour.update_attribute :is_open, false
-    @tour.update_attribute :num_of_pass, @num_of_pass
-    true
-  end
-
   def user_present
     @tour = Tour.find_by id: params[:id]
     if @tour
@@ -97,11 +86,6 @@ class TourdetailsController < ApplicationController
     else
       check_equal_maxnum
     end
-  end
-
-  def check_over_slot
-    flash[:danger] = t "controllers.tourdetails_controller.over_slots"
-    false
   end
 
   def check_smaller_maxnum

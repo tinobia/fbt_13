@@ -2,6 +2,7 @@ class Review < ApplicationRecord
   belongs_to :tour
   belongs_to :user
   has_many :like_reviews, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :user_id, presence: true
   validates :tour_id, presence: true
@@ -14,4 +15,5 @@ class Review < ApplicationRecord
     where "user_id = ?", user_id
   end
   scope :order_by_updated_at, ->{order "updated_at DESC"}
+  scope :order_by_created_at, ->{order "created_at DESC"}
 end
