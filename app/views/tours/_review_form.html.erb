@@ -1,4 +1,4 @@
-<%= form_for [@tour, @review] do |f| %>
+<%= form_for [@tour, @review], remote: true do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: t(".post_review"), class: "input-textarea" %>

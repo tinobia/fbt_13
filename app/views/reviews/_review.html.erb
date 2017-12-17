@@ -13,8 +13,8 @@
         </span>
         <div class = "content-review">
           <span class="timestamp style-review">
+            <%=time_ago_in_words review.created_at %>
             <% if current_user?(review.user) %>
-              <%=time_ago_in_words review.created_at %>
               <%= link_to "", tour_review_path(@tour,id: review.id),
                 method: :delete, data: {confirm: t(".confirm")}, class: "fa fa-trash-o" %>
             <% end %>
@@ -23,10 +23,11 @@
       </div>
       <ul>
         <% if review.comments.any? %>
+          <div id = "comment-list">
           <%= render partial: "comments/comment", collection: review.comments, as: :comment %>
         <% end %>
       </ul>
-      <div>
+      <div id = "new-comment" >
         <%= render "reviews/comment_form", review: review  %>
       </div>
     </div>

@@ -12,8 +12,8 @@
       </span>
       <div class = "content-review">
         <span class="timestamp style-review">
+          <%= time_ago_in_words comment.created_at %>
           <% if current_user?(comment.user) %>
-            <%= time_ago_in_words comment.created_at %>
             <%= link_to "", tour_review_comment_path(@tour, comment.review, id: comment.id),
               method: :delete, data: {confirm: t(".confirm")}, class: "fa fa-trash-o" %>
           <% end %>

@@ -11,24 +11,26 @@
         <div class="col-sm-12 detail">
           <h1><%= @tour.name_tour %></h1>
           <hr>
-          <p class = "start-time">
-            <span class = "fa fa-calendar"></span>
-            <%= l @tour.starttime, format: :long %>
-            <span class = "fa fa-arrow-right"></span>
-            <%= l @tour.endtime, format: :long %>
-          </p>
+            <p class = "start-time">
+              <span class = "fa fa-calendar"></span>
+              <%= l @tour.starttime, format: :long %>
+              <span class = "fa fa-arrow-right"></span>
+              <%= l @tour.endtime, format: :long %>
+            </p>
           <hr>
           <pre><%= @tour.content %></pre>
         </div>
       </div>
-      <div>
+      <div id = "new-review">
         <%= render "tours/review_form" %>
       </div>
     </div>
   </div>
   <div class = "row">
     <ul class = "col-md-6 col-md-offset-4">
-      <%= render @reviews %>
+      <div id = "review-list">
+        <%= render @reviews %>
+      </div>
       <%= will_paginate @reviews %>
     </ul>
   </div>
